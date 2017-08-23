@@ -60,7 +60,16 @@ class Buy extends React.Component {
 		if(!userinfo.username){
 			//如果没有用户名 则跳转到登录页面 并且则要传入目标router 
 			//以便登录完可以自己跳转回该页面
-			hashHistory.push('/login/' + encodeURIComponent('/detail/' + id+'/'+category +'/' +keyword))
+			if(category === undefined){
+				hashHistory.push('/login/' + encodeURIComponent('/detail/' + id))
+			}else{
+				if(keyword === undefined){
+					hashHistory.push('/login/' + encodeURIComponent('/detail/' + id+'/'+category))
+				}else{
+					hashHistory.push('/login/' + encodeURIComponent('/detail/' + id+'/'+category +'/' +keyword))
+				}
+			}
+			
 			return false
 		}
 		return true

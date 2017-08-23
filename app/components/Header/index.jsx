@@ -42,10 +42,10 @@ class Header extends React.Component {
 			const keyword = this.props.keyword
 			//所以先检测是否登录
             if(checking){
-            	if(category === 'undefined'){
+            	if(category === undefined){
             		hashHistory.push('/')
             	}else{
-            		if(keyword !== 'undefined'){	
+            		if(keyword !== undefined){	
             	 	hashHistory.push('/search/'+category +'/' +keyword)
             	 }else{
             	 	hashHistory.push('/search/'+category)
